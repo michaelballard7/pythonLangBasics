@@ -241,4 +241,6 @@ print(text)
 
 #Formating for local time
 now = datetime.datetime.now()
-date_text = now.strftime('%y/%m/%d %H:%M: ')
+date_text = now.strftime('%y/%m/%d %H:%M:%S:%f')[:-4]
+text = "The time is: %s" %(date_text)
+print(text)
