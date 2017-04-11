@@ -78,4 +78,27 @@ class Michael(object):
         self.rand_val = random.randint(1,10)
 
 doThis = Michael()
-print(doThis.generateNum())
+doThis.generateNum()
+print(doThis.rand_val)
+
+# Below is a new class with getter and setter methods
+# Remember any instance method is designed to work on the instance implicitly
+# Setter values take an arguement and setting it as an attribute in the instance
+# Getter methods allow me to retrieve an instances state or attributes 
+# Hence, why self is passed to the gettter and setter methods first
+
+class MyClass2(object):
+    def set_val(self, val):
+        self.value = val
+
+    def get_val(self):
+        return self.value
+
+a = MyClass2()
+b = MyClass2()
+
+a.set_val(10)
+b.set_val(100)
+
+print(a.get_val())
+print(b.get_val())
