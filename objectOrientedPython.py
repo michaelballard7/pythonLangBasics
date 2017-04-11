@@ -18,9 +18,8 @@
 
 
 # Below is the way to import from other modules
-import fibo
+import math
 import datetime as dateLibrary
-from fibo import fib2
 from decimal import Decimal
 
 # Fibonacci numbers module
@@ -58,6 +57,7 @@ print;print
 # Below is a new class that contains instance methods
 # Instance Methods are variables defined in the class
 # In the example below the instance is self meaning the object itself
+# Self is the instance upon which an object is called
 # A method on an instance passes the instance as the 1st arguement to the method
 # Instance have their own data or state called instance attributes
 # Variables defined in a class are available to all instances
@@ -70,3 +70,12 @@ thisJoe = Joe()
 thisJoe.callme()
 
 print;print
+
+import random
+
+class Michael(object):
+    def generateNum(self):
+        self.rand_val = random.randint(1,10)
+
+doThis = Michael()
+print(doThis.generateNum())
