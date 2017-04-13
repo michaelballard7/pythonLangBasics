@@ -84,7 +84,7 @@ print(doThis.rand_val)
 # Below is a new class with getter and setter methods
 # Remember any instance method is designed to work on the instance implicitly
 # Setter values take an arguement and setting it as an attribute in the instance
-# Getter methods allow me to retrieve an instances state or attributes 
+# Getter methods allow me to retrieve an instances state or attributes
 # Hence, why self is passed to the gettter and setter methods first
 
 class MyClass2(object):
@@ -97,8 +97,57 @@ class MyClass2(object):
 a = MyClass2()
 b = MyClass2()
 
+# I can set an instances attribute in the body of the code
+a.value = 'hello'
+
+# However, setting gateways using instance methods insures the integrty of state, aka encapsulation
+# By requiring encapsulation I create safe storage of data in an instance
+# Data should only be accessed through instance methods
+# Data should be validated by passing through instance methods
+# These mechnanism protect dat from external processes
+
+
 a.set_val(10)
 b.set_val(100)
 
+
 print(a.get_val())
 print(b.get_val())
+
+# Below I utilize the __init__ inorder to construct new instances
+# __init__ is a method that is automatically called when a new instance is constructed
+# The self arguement is the first appearance of the instance
+# __init__ allows me to initialize attributes and prep work before and instance is created
+
+
+class MyNum(object):
+    def __init__(self, value):
+        print('calling __init__')
+        self.val = value
+
+    def increment(self):
+        self.val = self.val + 1
+
+dd = MyNum(5)
+dd.increment()
+dd.increment()
+
+print(dd.val)
+
+
+##### Class attributes vs Instance attributes #####
+# The attribute look up order is first in the instance then in the class
+# An instance has access to its attributes as well as the class's
+
+class YourClass(object):
+    classy = 10 # class variables
+
+    def set_val(self):
+        self.insty = 100 # insty is a instance attributes
+
+dd = YourClass()
+dd.set_val()
+
+print(dd.classy)
+print(dd.insty)
+print
